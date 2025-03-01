@@ -1,3 +1,105 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
+
+:root {
+  --primary-color: #d2691e;
+  --secondary-color: #8b4513;
+  --accent-color: #f5deb3;
+  --text-color: #333;
+  --light-bg: #f9f5f0;
+  --dark-bg: #2d2013;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-gray-800 font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] text-white font-medium py-3 px-8 rounded-none transition duration-300;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-[var(--primary-color)] text-[var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-white font-medium py-2 px-6 rounded-none transition duration-300;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-serif font-bold mb-6 relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-16 h-1 bg-[var(--primary-color)];
+  }
+  
+  .kailash-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .kailash-card {
+    @apply bg-white border border-gray-200 hover:shadow-lg transition duration-300;
+  }
+  
+  .kailash-hero {
+    @apply relative min-h-screen flex items-center justify-center text-white;
+  }
+  
+  .kailash-hero-content {
+    @apply text-center z-20 px-4 max-w-4xl;
+  }
+  
+  .kailash-nav-link {
+    @apply text-gray-700 hover:text-[var(--primary-color)] font-medium uppercase text-sm tracking-wider;
+  }
+  
+  .kailash-footer {
+    @apply bg-[var(--dark-bg)] text-white pt-16 pb-8;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.8s ease-out;
+}
+
+/* Kailash Energy specific styles */
+.kailash-gradient-bg {
+  background: linear-gradient(135deg, var(--light-bg) 0%, #fff 100%);
+}
+
+.kailash-product-card {
+  @apply overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-500;
+}
+
+.kailash-product-card:hover img {
+  @apply scale-105;
+}
+
+.kailash-product-image {
+  @apply transition-transform duration-700;
+}
+
+.kailash-section-spacing {
+  @apply py-16 md:py-24;
+} 
