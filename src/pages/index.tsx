@@ -1,32 +1,32 @@
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
-  // 模拟数据 - 实际项目中这些数据会从数据库获取
+  // 模拟数据
   const featuredProducts = [
     {
       id: '1',
       name: 'Classic T-Shirt',
       price: 29.99,
-      image: '/images/product1.jpg',
+      image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&auto=format&fit=crop&q=60',
     },
     {
       id: '2',
       name: 'Denim Jeans',
       price: 79.99,
-      image: '/images/product2.jpg',
+      image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&auto=format&fit=crop&q=60',
     },
     {
       id: '3',
       name: 'Leather Jacket',
       price: 199.99,
-      image: '/images/product3.jpg',
+      image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&auto=format&fit=crop&q=60',
     },
     {
       id: '4',
       name: 'Running Shoes',
       price: 89.99,
-      image: '/images/product4.jpg',
+      image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop&q=60',
     },
   ]
 
@@ -34,17 +34,17 @@ export default function Home() {
     {
       id: '1',
       name: 'Clothing',
-      image: '/images/category1.jpg',
+      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&fit=crop&q=60',
     },
     {
       id: '2',
       name: 'Shoes',
-      image: '/images/category2.jpg',
+      image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&auto=format&fit=crop&q=60',
     },
     {
       id: '3',
       name: 'Accessories',
-      image: '/images/category3.jpg',
+      image: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800&auto=format&fit=crop&q=60',
     },
   ]
 
@@ -53,6 +53,12 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center bg-gray-900 text-white">
         <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&auto=format&fit=crop&q=60"
+            alt="Hero background"
+            fill
+            className="object-cover object-center"
+          />
           <div className="absolute inset-0 bg-black opacity-50" />
         </div>
         <div className="relative z-10 text-center">
@@ -120,4 +126,4 @@ export default function Home() {
       </section>
     </div>
   )
-}
+} 

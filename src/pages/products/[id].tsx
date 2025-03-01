@@ -1,58 +1,91 @@
+import { GetStaticPaths, GetStaticProps } from 'next'
 import Image from 'next/image'
 import { ShoppingCart } from 'lucide-react'
 
-// 模拟产品数据获取
-async function getProduct(id: string) {
-  // 模拟产品数据
-  const products = {
-    '1': {
-      id: '1',
-      name: 'Classic T-Shirt',
-      price: 29.99,
-      description: 'A comfortable and stylish t-shirt made from 100% cotton. Perfect for everyday wear.',
-      images: [
-        'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&auto=format&fit=crop&q=60',
-        'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800&auto=format&fit=crop&q=60',
-        'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&auto=format&fit=crop&q=60'
-      ],
-      sizes: ['XS', 'S', 'M', 'L', 'XL'],
-      colors: ['White', 'Black', 'Gray'],
-      features: [
-        'Premium cotton material',
-        'Comfortable fit',
-        'Machine washable',
-        'Available in multiple colors',
-      ],
-      stock: 50,
-    },
-    '2': {
-      id: '2',
-      name: 'Denim Jeans',
-      price: 79.99,
-      description: 'Classic denim jeans with a modern fit. Made from high-quality denim that lasts.',
-      images: [
-        'https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&auto=format&fit=crop&q=60',
-        'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&auto=format&fit=crop&q=60',
-        'https://images.unsplash.com/photo-1475178626620-a4d074967452?w=800&auto=format&fit=crop&q=60'
-      ],
-      sizes: ['30x30', '32x32', '34x34', '36x34'],
-      colors: ['Blue', 'Black', 'Gray'],
-      features: [
-        'Premium denim material',
-        'Modern fit',
-        'Durable construction',
-        'Multiple washes available',
-      ],
-      stock: 35,
-    },
-  }
-
-  return products[id as keyof typeof products] || products['1']
+// 定义产品类型
+type Product = {
+  id: string;
+  name: string;
+  price: number;
+  description: string;
+  images: string[];
+  sizes: string[];
+  colors: string[];
+  features: string[];
+  stock: number;
 }
 
-export default async function ProductPage({ params }: { params: { id: string } }) {
-  const product = await getProduct(params.id)
+// 产品数据
+const products: Record<string, Product> = {
+  '1': {
+    id: '1',
+    name: 'Classic T-Shirt',
+    price: 29.99,
+    description: 'A comfortable and stylish t-shirt made from 100% cotton. Perfect for everyday wear.',
+    images: [
+      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&auto=format&fit=crop&q=60',
+      'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800&auto=format&fit=crop&q=60',
+      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&auto=format&fit=crop&q=60'
+    ],
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    colors: ['White', 'Black', 'Gray'],
+    features: [
+      'Premium cotton material',
+      'Comfortable fit',
+      'Machine washable',
+      'Available in multiple colors',
+    ],
+    stock: 50,
+  },
+  '2': {
+    id: '2',
+    name: 'Denim Jeans',
+    price: 79.99,
+    description: 'Classic denim jeans with a modern fit. Made from high-quality denim that lasts.',
+    images: [
+      'https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&auto=format&fit=crop&q=60',
+      'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&auto=format&fit=crop&q=60',
+      'https://images.unsplash.com/photo-1475178626620-a4d074967452?w=800&auto=format&fit=crop&q=60'
+    ],
+    sizes: ['30x30', '32x32', '34x34', '36x34'],
+    colors: ['Blue', 'Black', 'Gray'],
+    features: [
+      'Premium denim material',
+      'Modern fit',
+      'Durable construction',
+      'Multiple washes available',
+    ],
+    stock: 35,
+  },
+}
 
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = Object.keys(products).map((id) => ({
+    params: { id },
+  }))
+
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const id = params?.id as string
+  const product = products[id] || products['1']
+
+  return {
+    props: {
+      product,
+    },
+  }
+}
+
+type Props = {
+  product: Product
+}
+
+export default function ProductPage({ product }: Props) {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
