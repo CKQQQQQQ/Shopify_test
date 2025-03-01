@@ -159,7 +159,7 @@ export default function ProductsPage() {
     setFilteredProducts(result);
     
     // 更新URL参数
-    const query: any = {};
+    const query: Record<string, string> = {};
     if (selectedCategory !== 'all') query.category = selectedCategory;
     if (sortOption !== 'default') query.sort = sortOption;
     
@@ -168,7 +168,7 @@ export default function ProductsPage() {
       query
     }, undefined, { shallow: true });
     
-  }, [selectedCategory, sortOption]);
+  }, [selectedCategory, sortOption, router]);
   
   // 处理分类变更
   const handleCategoryChange = (categoryId: string) => {

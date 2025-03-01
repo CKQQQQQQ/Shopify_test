@@ -41,7 +41,7 @@ export default function Home() {
             <div className="md:w-1/2 mb-10 md:mb-0 md:pr-12">
               <h2 className="section-title">匠心传承，百年臻品</h2>
               <p className="text-lg text-gray-700 mb-6">
-                新会陈皮，源于广东江门市新会区，是以新会柑的果皮制成的中药材，具有理气健脾、燥湿化痰的功效。自古以来，新会陈皮便是岭南地区的珍贵特产，被誉为"南国珍品"。
+                新会陈皮，源于广东江门市新会区，是以新会柑的果皮制成的中药材，具有理气健脾、燥湿化痰的功效。自古以来，新会陈皮便是岭南地区的珍贵特产，被誉为&quot;南国珍品&quot;。
               </p>
               <p className="text-lg text-gray-700 mb-6">
                 新会陈皮的制作工艺独特，需经过采摘、去瓤、晾晒、存放等多道工序。陈皮越陈越香，&quot;一年药，三年宝，七年才为良药&quot;。
