@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -12,6 +14,7 @@ const nextConfig = {
       },
     ],
   },
+  basePath: '/Shopify_test',
 }
 
 module.exports = nextConfig 
