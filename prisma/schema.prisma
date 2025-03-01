@@ -1,6 +1,6 @@
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 generator client {
@@ -26,7 +26,7 @@ model Product {
   name        String
   description String
   price       Float
-  images      String[]
+  images      String      // Comma-separated image URLs
   category    Category    @relation(fields: [categoryId], references: [id])
   categoryId  String
   stock       Int         @default(0)
