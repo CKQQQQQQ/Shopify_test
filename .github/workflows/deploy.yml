@@ -30,8 +30,13 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Create .nojekyll file
+        run: touch out/.nojekyll
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out 
+          publish_dir: ./out
+          cname: ${{ github.repository_owner }}.github.io
+          force_orphan: true 
