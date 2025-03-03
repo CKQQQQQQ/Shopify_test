@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <Link href="/" className="flex items-center">
               <div className="relative w-12 h-12 mr-3">
                 <Image 
-                  src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?q=80&w=100&auto=format&fit=crop" 
+                  src="/images/chenpi/logo.jpg" 
                   alt="新会陈皮" 
                   width={48}
                   height={48}
@@ -127,7 +127,7 @@ export default function App({ Component, pageProps }: AppProps) {
               <div className="flex items-center mb-6">
                 <div className="relative w-12 h-12 mr-3">
                   <Image 
-                    src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?q=80&w=100&auto=format&fit=crop" 
+                    src="/images/chenpi/logo.jpg" 
                     alt="新会陈皮" 
                     width={48}
                     height={48}

@@ -12,9 +12,9 @@ const products = [
     price: 298,
     originalPrice: 358,
     images: [
-      'https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?q=80&w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1563911892437-1feda0179e1b?q=80&w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?q=80&w=600&auto=format&fit=crop'
+      '/images/chenpi/product1-1.jpg',
+      '/images/chenpi/product1-2.jpg',
+      '/images/chenpi/product1-3.jpg'
     ],
     category: '陈皮精品',
     tags: ['5年陈', '特级', '礼盒'],

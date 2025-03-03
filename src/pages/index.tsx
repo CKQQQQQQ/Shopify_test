@@ -17,7 +17,7 @@ export default function Home() {
         <div className="relative h-full flex items-center justify-center">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?q=80&w=1920&auto=format&fit=crop" 
+              src="/images/chenpi/hero.jpg" 
               alt="新会陈皮背景" 
               layout="fill"
               objectFit="cover"
@@ -53,7 +53,7 @@ export default function Home() {
             <div className="md:w-1/2">
               <div className="relative h-96 overflow-hidden">
                 <Image 
-                  src="https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?q=80&w=800&auto=format&fit=crop" 
+                  src="/images/chenpi/process.jpg" 
                   alt="新会陈皮制作工艺" 
                   layout="fill"
                   objectFit="cover"
@@ -78,7 +78,7 @@ export default function Home() {
             <div className="kailash-product-card group">
               <div className="relative h-80 overflow-hidden">
                 <Image 
-                  src="https://images.unsplash.com/photo-1563911892437-1feda0179e1b?q=80&w=600&auto=format&fit=crop" 
+                  src="/images/chenpi/product1.jpg" 
                   alt="陈皮精品" 
                   layout="fill"
                   objectFit="cover"
@@ -99,7 +99,7 @@ export default function Home() {
             <div className="kailash-product-card group">
               <div className="relative h-80 overflow-hidden">
                 <Image 
-                  src="https://images.unsplash.com/photo-1547825407-2d060104b7f8?q=80&w=600&auto=format&fit=crop" 
+                  src="/images/chenpi/product2.jpg" 
                   alt="柑普茶" 
                   layout="fill"
                   objectFit="cover"
@@ -120,7 +120,7 @@ export default function Home() {
             <div className="kailash-product-card group">
               <div className="relative h-80 overflow-hidden">
                 <Image 
-                  src="https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?q=80&w=600&auto=format&fit=crop" 
+                  src="/images/chenpi/product3.jpg" 
                   alt="文创礼品" 
                   layout="fill"
                   objectFit="cover"
@@ -158,28 +158,28 @@ export default function Home() {
                 name: "特级新会陈皮 5年陈",
                 price: 398,
                 originalPrice: 498,
-                image: "https://images.unsplash.com/photo-1582284540020-8acbe03f4924?q=80&w=300&auto=format&fit=crop"
+                image: "/images/chenpi/product1.jpg"
               },
               {
                 id: 2,
                 name: "特级新会陈皮 10年陈",
                 price: 598,
                 originalPrice: 698,
-                image: "https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?q=80&w=300&auto=format&fit=crop"
+                image: "/images/chenpi/product2.jpg"
               },
               {
                 id: 3,
                 name: "新会小青柑普洱茶",
                 price: 498,
                 originalPrice: 598,
-                image: "https://images.unsplash.com/photo-1547825407-2d060104b7f8?q=80&w=300&auto=format&fit=crop"
+                image: "/images/chenpi/product3.jpg"
               },
               {
                 id: 4,
                 name: "新会陈皮礼盒装",
                 price: 698,
                 originalPrice: 798,
-                image: "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?q=80&w=300&auto=format&fit=crop"
+                image: "/images/chenpi/product4.jpg"
               }
             ].map((product) => (
               <div key={product.id} className="kailash-product-card group">
@@ -238,7 +238,7 @@ export default function Home() {
             <div className="md:w-1/2">
               <div className="relative h-96 overflow-hidden">
                 <Image 
-                  src="https://images.unsplash.com/photo-1563911892437-1feda0179e1b?q=80&w=800&auto=format&fit=crop" 
+                  src="/images/chenpi/culture.jpg" 
                   alt="新会陈皮文化" 
                   layout="fill"
                   objectFit="cover"
@@ -265,19 +265,19 @@ export default function Home() {
                 name: "张先生",
                 location: "广州",
                 comment: "家里常备新会陈皮，泡水、煲汤都很好。这家的陈皮品质很好，香气浓郁，服务也很周到。",
-                avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop"
+                avatar: "/images/chenpi/avatar1.jpg"
               },
               {
                 name: "李女士",
                 location: "北京",
                 comment: "朋友推荐的店铺，买了几款柑普茶，口感醇厚，茶香与陈皮香完美融合，很满意。",
-                avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop"
+                avatar: "/images/chenpi/avatar2.jpg"
               },
               {
                 name: "王先生",
                 location: "上海",
                 comment: "送长辈的礼物，包装精美，产品质量上乘，老人家很喜欢，会继续支持。",
-                avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop"
+                avatar: "/images/chenpi/avatar3.jpg"
               }
             ].map((review, index) => (
               <div key={index} className="kailash-card p-8">
@@ -325,17 +325,17 @@ export default function Home() {
               {
                 title: "新会陈皮的历史渊源",
                 excerpt: "新会陈皮有着悠久的历史，自唐代起就被列为贡品，是岭南地区的珍贵特产...",
-                image: "https://images.unsplash.com/photo-1582284540020-8acbe03f4924?q=80&w=600&auto=format&fit=crop"
+                image: "/images/chenpi/history.jpg"
               },
               {
                 title: "如何鉴别优质新会陈皮",
                 excerpt: "优质的新会陈皮应具备色泽橙红、油点饱满、香气浓郁、滋味醇厚等特点...",
-                image: "https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?q=80&w=600&auto=format&fit=crop"
+                image: "/images/chenpi/quality.jpg"
               },
               {
                 title: "陈皮与健康养生",
                 excerpt: "中医认为陈皮性温、味辛、苦，入脾、肺经，具有理气健脾、燥湿化痰的功效...",
-                image: "https://images.unsplash.com/photo-1563911892437-1feda0179e1b?q=80&w=600&auto=format&fit=crop"
+                image: "/images/chenpi/health.jpg"
               }
             ].map((blog, index) => (
               <div key={index} className="kailash-product-card group">
